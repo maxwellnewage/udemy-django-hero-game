@@ -1,0 +1,9 @@
+{% load static %}
+
+<img width="50" height="50" src="{% static 'images/inventory/' %}{{ item_image }}">
+
+{% if item %}
+    {{ item.name }}
+{% else %}
+    No hay nada equipado
+{% endif %}

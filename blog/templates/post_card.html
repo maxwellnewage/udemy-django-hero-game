@@ -1,0 +1,15 @@
+<div class="card m-4">
+  <div class="card-header">
+    {{ post.get_category_display }} |
+    @{{ post.author }}
+    {% if request.user == post.author %}
+    | <a href="{% url 'update-post' post.id %}">Editar</a>
+    | <a href="{% url 'delete-post' post.id %}">Borrar</a>
+    {% endif %}
+  </div>
+
+  <div class="card-body">
+    <h5 class="card-title">{{ post.title }}</h5>
+    <p class="card-text">{{ post.body }}</p>
+  </div>
+</div>

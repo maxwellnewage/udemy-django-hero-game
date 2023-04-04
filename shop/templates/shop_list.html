@@ -1,0 +1,46 @@
+<div class="nes-table-responsive">
+  <table class="nes-table is-bordered is-bordered is-centered">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Atq</th>
+        <th>Def</th>
+        <th>Tipo</th>
+        <th>Compra</th>
+        <th>Venta</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for weapon in weapons %}
+        <tr>
+          <td>{{ weapon.name }}</td>
+          <td>
+            {% if weapon.attack %}
+              {{ weapon.attack }}
+            {% endif %}
+          </td>
+          <td>
+            {% if weapon.defense %}
+              {{ weapon.defense }}
+            {% endif %}
+          </td>
+          <td>{{ weapon.get_type_display }}</td>
+          <td>{{ weapon.money_cost }}</td>
+          <td>{{ weapon.cost_for_selling }}</td>
+          <td>
+            {% if weapon.is_equipped %}
+              <a href="{% url 'shop-sell' weapon.id %}" class="nes-btn is-error">
+                <i class="fa-solid fa-sack-dollar"></i>
+              </a>
+            {% else %}
+              <a href="{% url 'shop-buy' weapon.id %}" class="nes-btn is-success">
+                <i class="fa-solid fa-sack-dollar"></i>
+              </a>
+            {% endif %}
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>

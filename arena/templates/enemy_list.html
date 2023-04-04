@@ -1,0 +1,33 @@
+<div class="nes-container with-title is-centered">
+  <p class="title">Enemigos</p>
+  <div class="nes-table-responsive">
+    <table class="nes-table is-bordered is-bordered is-centered">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>HP</th>
+          <th>Atq</th>
+          <th>Def</th>
+          <th>Posible Drop</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for enemy in enemies %}
+          <tr>
+            <td>{{ enemy.name }}</td>
+            <td>{{ enemy.hp }}</td>
+            <td>{{ enemy.attack }}</td>
+            <td>{{ enemy.defense }}</td>
+            <td>{{ enemy.money_drop }}</td>
+            <td>
+              <a href="{% url 'arena-attack-enemy' enemy.id %}" class="nes-btn is-error">
+                <i class="fa-solid fa-crosshairs"></i>
+              </a>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>

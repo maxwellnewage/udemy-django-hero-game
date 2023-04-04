@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block 'content' %}
+  <div class="row">
+    <div class="col">
+      <div class="nes-container with-title">
+        <p class="title">Resultado de la batalla</p>
+        {% if battle.player_wins %}
+          <h1 class="nes-text is-success">Has Ganado!</h1>
+        {% else %}
+          <h1 class="nes-text is-error">Has Perdido!</h1>
+        {% endif %}
+        <p>Puntos de daño Causados: <span class="nes-text is-success">{{ battle.player_damage }} pts</span></p>
+        <p>Puntos de daño Recibidos: <span class="nes-text is-error">{{ battle.enemy_damage }} pts</span></p>
+        <p>Dinero: <span class="nes-text is-warning">${{ battle.money }}</span></p>
+        <p>Puntaje: <span class="nes-text is-primary">{{ battle.score }}</span></p>
+      </div>
+    </div>
+  </div>
+{% endblock %}

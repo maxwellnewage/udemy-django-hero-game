@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block 'content' %}
+
+  <div class="row">
+    <div class="col">
+      <div class="nes-container with-title">
+        <p class="title">{{ title }}</p>
+        <form action="" method="post">
+          {% csrf_token %}
+
+          {% for field in form %}
+            <div class="mb-3">
+              <label for="{{ field.label }}">{{ field.label }}</label>
+              {{ field }}
+            </div>
+          {% endfor %}
+
+          <input type="submit" class="nes-btn {{ button_style }}" value="{{ submit_value }}">
+          <a href="{% url 'home' %}">Volver</a>
+        </form>
+      </div>
+    </div>
+
+    <div class="col">
+      {% include 'rules.html' %}
+    </div>
+  </div>
+
+{% endblock %}

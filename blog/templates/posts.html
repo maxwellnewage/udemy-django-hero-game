@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block 'content' %}
+<div class="nes-container with-title">
+    <p class="title">TODAS LAS NOTICIAS</p>
+    {% for post in posts %}
+        {% include 'post_card.html' %}
+    {% endfor %}
+</div>
+{% endblock %}

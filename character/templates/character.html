@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block 'content' %}
+  {% if not player %}
+    {% include 'player_must_create.html' %}
+  {% else %}
+    <div class="row">
+      <div class="col">
+        {% include 'inventory.html' %}
+      </div>
+
+      <div class="col">
+        {% include 'player_info.html' %}
+      </div>
+    </div>
+  {% endif %}
+
+{% endblock %}

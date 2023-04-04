@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block 'content' %}
+
+<div class="row mb-3">
+    <div class="col">
+        <h1>Hero Game</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <div class="nes-container with-title">
+            <p class="title nes-text is-primary">CATEGORIAS</p>
+            <ul class="nes-list is-disc">
+                <li><a href="{% url 'home' %}">Todas</a></li>
+                <li><a href="{% url 'home' %}?cat=PA">Parches</a></li>
+                <li><a href="{% url 'home' %}?cat=ME">Mejoras</a></li>
+                <li><a href="{% url 'home' %}?cat=EV">Eventos</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="col-8">
+        <div class="nes-container with-title">
+            <p class="title nes-text is-warning">ULTIMAS NOTICIAS</p>
+            {% for post in posts %}
+                {% include 'post_card.html' %}
+            {% endfor %}
+            <a href="{% url 'posts' %}" class="nes-btn is-success">Ver Todas</a>
+            {% if request.user.is_author %}
+                <a href="{% url 'create-post' %}" class="nes-btn is-primary">Crear Noticia</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<div class="row">
+    <div class="col">
+        <div class="nes-container with-title">
+            <p class="title nes-text is-success">MEJORES JUGADORES</p>
+            <ul class="nes-list is-circle">
+                {% for player in best_players %}
+                    <li>{{ player }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="nes-container with-title">
+            <p class="title nes-text is-error">RECIEN LLEGADOS</p>
+            <ul class="nes-list is-circle">
+                {% for player in recent_players %}
+                    <li>{{ player }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

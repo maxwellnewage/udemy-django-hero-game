@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block 'content' %}
+  <div class="row">
+    <div class="col">
+      <div class="nes-container with-title">
+        <p class="title">
+          {% if page == 'login' %}
+            Login
+          {% else %}
+            Registro
+          {% endif %}
+        </p>
+        <form action="" method="post">
+          {% csrf_token %}
+
+          {% for field in form %}
+          <div class="mb-3">
+            <label for="{{ field.label }}">{{ field.label }}</label>
+            {{ field }}
+          </div>
+          {% endfor %}
+
+          <input type="submit" class="btn btn-primary" value="{{ submit_value }}">
+          <hr>
+          {% if page == 'login' %}
+            <p>¿No tienes cuenta? <a href="{% url 'register' %}">¡Pulsa aquí!</a></p>
+          {% else %}
+            <p>¿Ya tienes cuenta? <a href="{% url 'login' %}">¡Pulsa aquí!</a></p>
+          {% endif %}
+        </form>
+      </div>
+    </div>
+
+    <div class="col">
+      {% include 'rules.html' %}
+    </div>
+  </div>
+{% endblock %}

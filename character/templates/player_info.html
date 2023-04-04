@@ -1,0 +1,10 @@
+<div class="nes-container with-title is-centered">
+  <p class="title">{{ player.name | upper }} ({{ player.score }})</p>
+  <p>HP: {{ player.hp }}</p>
+  <p>Dinero: ${{ player.money }}</p>
+  <p>Ataque: {{ player.attack }} pts</p>
+  <p>Defensa: {{ player.defense }} pts</p>
+
+  <a href="{% url 'update-player' player.id %}" class="nes-btn is-warning">Modificar</a>
+  <a href="{% url 'delete-player' player.id %}" class="nes-btn is-error">Eliminar</a>
+</div>
