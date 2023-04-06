@@ -14,3 +14,14 @@ Este proyecto de Django se divide en varias apps, las cuales representan distint
 ## API
 En el módulo app podemos encontrar un archivo [api.py](app/api.py), el cual contiene los métodos que exponen una API del CRUD de la entidad Player.
 Por otro lado, también se incluyen métodos para autenticar usuarios.
+
+## Instalación
+Primero debemos instalar los paquetes de npm:
+> npm install
+
+Luego, con un entorno de python creado:
+> pip install -r requirements.txt
+
+El cual descargará las librerías utilizadas por django.
+Finalmente para correr el proyecto utilizaremos:
+> python manage.py runserver
