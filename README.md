@@ -16,7 +16,10 @@ En el módulo app podemos encontrar un archivo [api.py](app/api.py), el cual con
 Por otro lado, también se incluyen métodos para autenticar usuarios.
 
 ## Instalación
-Primero debemos instalar los paquetes de npm:
+Primero tenemos que correr las migraciones de nuestra BD:
+> python manage.py migrate
+
+Luego debemos instalar los paquetes de npm:
 > npm install
 
 Luego, con un entorno de python creado:
