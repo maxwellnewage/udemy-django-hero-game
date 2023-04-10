@@ -1,8 +1,10 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 
 from character.models import Player, Enemy
 
 
+@login_required(login_url='login')
 def home(request):
     player = Player.objects.filter(owner=request.user).first()
     enemies = Enemy.objects.all()
