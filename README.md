@@ -19,7 +19,7 @@ Por otro lado, también se incluyen métodos para autenticar usuarios.
 Primero tenemos que correr las migraciones de nuestra BD:
 > python manage.py migrate
 
-Luego debemos instalar los paquetes de npm:
+Luego debemos instalar los paquetes de npm (dependencias de Bootstrap y NES.css):
 > npm install
 
 Luego, con un entorno de python creado:
