@@ -9,5 +9,5 @@ router = routers.DefaultRouter()
 router.register('api/players', PlayerViewSet, 'players')
 
 api_urlpatterns = [
-    path('api/login', api.user_login, name='api-login')
+    path('api/login/', api.user_login, name='api-login')
 ]
