@@ -16,7 +16,9 @@ En el módulo app podemos encontrar un archivo [api.py](app/api.py), el cual con
 Por otro lado, también se incluyen métodos para autenticar usuarios.
 
 ## Instalación
-Primero tenemos que correr las migraciones de nuestra BD:
+Este proyecto funciona con decouple, por lo cual debemos renombrar .env.sqlite a .env, el cual es un archivo de entorno ignorado en git. Dentro, podremos configurar los accesos a la base de datos, que por defecto son los de SQLite.
+
+Después tenemos que correr las migraciones de nuestra BD:
 > python manage.py migrate
 
 Luego debemos instalar los paquetes de npm (dependencias de Bootstrap y NES.css):
