@@ -1,5 +1,7 @@
 /node_modules/
+/static/
 /venv/
 /db.sqlite3
 **/__pycache__/
 .env
+.idea/

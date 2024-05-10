@@ -71,6 +71,9 @@ class Enemy(models.Model):
     defense = models.IntegerField()
     created = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        verbose_name_plural = "enemies"
+
     def __str__(self):
         return f"{self.name} | Drop: ${self.money_drop} | HP: {self.hp}"
 
